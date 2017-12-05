@@ -7,13 +7,13 @@ import apple.laf.JRSUIUtils;
  */
 public class Example6 {
 
-    public static TreeNode reConstruct(int[] a , int[] b){
-
-    }
-
-    public static void main(String[] args) {
-
-    }
+//    public static TreeNode reConstruct(int[] a , int[] b){
+//
+//    }
+//
+//    public static void main(String[] args) {
+//
+//    }
 }
 
 class TreeNode{
