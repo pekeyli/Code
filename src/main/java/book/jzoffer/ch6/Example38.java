@@ -17,16 +17,6 @@ public class Example38 {
         return number;
     }
 
-    /**
-     * 找排序数组中K第一次出现的位置
-     *
-     * @param data
-     * @param k
-     * @param start
-     * @param end
-     * @return
-     *
-     * */
     private static int getFirstK(int[] data, int k, int start, int end) {
         if(data==null || data.length<1 || start>end)
             return -1;
@@ -46,9 +36,6 @@ public class Example38 {
         return getFirstK(data,k,start,end);
     }
 
-    /**
-     * 找排序数组中k最后一次出现的位置
-     * */
     private static int getLastK(int[] data, int k, int start, int end) {
         if(data==null||data.length<1||start>end)
             return -1;

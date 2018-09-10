@@ -14,4 +14,8 @@ public class Example45 {
         }
         return s;
     }
+
+    public static void main(String[] args) {
+
+    }
 }

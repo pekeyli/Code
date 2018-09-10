@@ -10,6 +10,7 @@ public class Example55 {
 
     HashMap<Character, Integer> map=new HashMap();
     ArrayList<Character> list=new ArrayList<Character>();
+
     //Insert one char from stringstream
     public void Insert(char ch)
     {

@@ -1,6 +1,7 @@
 package book.jzoffer.ch6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -8,37 +9,27 @@ import java.util.Collections;
  */
 public class Example44 {
 
-    public boolean isContinuous(int [] numbers) {
-        if(numbers == null || numbers.length == 0 || numbers.length > 5){
+    public static boolean isContinuous(int [] numbers) {
+        if(numbers == null || numbers.length == 0)
             return false;
-        }
-        ArrayList<Integer> al = new ArrayList<>();
-        int len = numbers.length;
-        int count = 0;
-        for(int i = 0; i < len; i++){
-            //必须去0，因为0可以是任意数字，如0，2，3，5，6，也是连续的
-            if(0 == numbers[i]){
-                count++;
-            }else{
-                al.add(numbers[i]);
-            }
-        }
-        //非0的排序
-        Collections.sort(al);
-        int len1 = al.size();
-        //大于4，肯定false
-        if(Math.abs(al.get(0) - al.get(len1 - 1)) > 4){
-            return false;
-        }
-        for(int i = 0; i < len1 - 1; i++){
-            //相邻的只差，大于0不能重复，大于4肯定false
-            int temp = al.get(i + 1) - al.get(i);
-            if(0 < temp && temp < 5){
-                continue;
-            }else{
+        Arrays.sort(numbers);
+        int num1 = 0;
+        int num2 = 0;
+        // 统计0的个数
+        while(num1 != numbers.length && numbers[num1] == 0)
+            ++num1;
+        // 计算除了0其他数字的空缺数
+        for(int i = num1 + 1; i < numbers.length; ++i) {
+            if(numbers[i] == numbers[i - 1])
                 return false;
-            }
+            num2 += numbers[i] - numbers[i - 1] - 1;
         }
-        return true;
+        if(num1 >= num2)
+            return true;
+        return false;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
